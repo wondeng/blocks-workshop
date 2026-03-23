@@ -410,6 +410,112 @@ footer p {
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .hero-left {
+    padding: 100px 24px 48px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero-right {
+    height: 300px;
+    grid-template-rows: 1fr;
+  }
+  .hero-img-bottom {
+    display: none;
+  }
+  .hero-img-top {
+    height: 300px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+  }
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+  .offer-section {
+    padding: 60px 24px;
+  }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item.tall {
+    grid-row: span 1;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 40px;
+  }
+  .about-img-tag {
+    right: 0;
+    bottom: 0;
+  }
+  .about-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .workshops {
+    padding: 60px 24px;
+  }
+  .workshops-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .workshops-sub {
+    text-align: left;
+  }
+  .workshop-cards {
+    grid-template-columns: 1fr;
+  }
+  .quote-section {
+    padding: 60px 24px;
+  }
+  .quote-section blockquote {
+    font-size: 22px;
+  }
+  .blocks-section {
+    padding: 60px 24px;
+  }
+  .blocks-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 40px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .offer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .offer-header p {
+    text-align: left;
+  }
+}
+
 </style>
 </head>
 <body>
