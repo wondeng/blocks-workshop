@@ -304,6 +304,27 @@ nav {
   color: var(--text-muted); text-transform: uppercase; position: relative; z-index: 1;
 }
 
+.quote-carousel { position: relative; z-index: 1; min-height: 200px; }
+.quote-slide {
+  position: absolute; top: 0; left: 0; right: 0;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  pointer-events: none;
+}
+.quote-slide.active {
+  opacity: 1; transform: translateY(0); pointer-events: auto; position: relative;
+}
+.quote-dots {
+  display: flex; justify-content: center; gap: 10px; margin-top: 40px;
+  position: relative; z-index: 1;
+}
+.quote-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--tan-light); border: none; cursor: pointer;
+  transition: background 0.3s; padding: 0;
+}
+.quote-dot.active { background: var(--brown-light); }
+
 /* BLOCKS */
 .blocks-section { padding: 100px 48px; border-bottom: 0.5px solid var(--border); }
 .blocks-section h2 {
@@ -727,9 +748,22 @@ footer p {
 <!-- QUOTE -->
 <section class="quote-section fade-in">
   <div class="quote-bg">"</div>
-  <blockquote data-en="&quot;The workshop completely changed how we think about block play in our classrooms.&quot;" data-np="&quot;कार्यशालाले हाम्रो कक्षाकोठाहरूमा ब्लक खेलबारे हाम्रो सोच्ने तरिकालाई पूर्णरूपमा परिवर्तन गर्यो।&quot;">"The workshop completely changed how we think about block play in our classrooms."</blockquote>
-  <div class="quote-attr" data-en="— Liana Stampur, Early Childhood Teacher" data-np="— लियाना स्ट्याम्पुर, प्रारम्भिक बाल शिक्षक">— Liana Stampur, Early Childhood Teacher</div>
+  <div class="quote-carousel">
+    <div class="quote-slide">
+      <blockquote data-en="&quot;The workshop completely changed how we think about block play in our classrooms.&quot;" data-np="&quot;कार्यशालाले हाम्रो कक्षाकोठाहरूमा ब्लक खेलबारे हाम्रो सोच्ने तरिकालाई पूर्णरूपमा परिवर्तन गर्यो।&quot;">"The workshop completely changed how we think about block play in our classrooms."</blockquote>
+      <div class="quote-attr" data-en="— Liana Stampur, Early Childhood Teacher" data-np="— लियाना स्ट्याम्पुर, प्रारम्भिक बाल शिक्षक">— Liana Stampur, Early Childhood Teacher</div>
+    </div>
+    <div class="quote-slide active">
+      <blockquote data-en="&quot;Workshops with Lhakpa are inspiring and empowering for teachers. She brings her experience into the room allowing participants the opportunity to deepen their understanding through hands-on experiences, reflection and time to ask questions. Teachers leave with both a practical tool box and a clear way to communicate how learning is happening for children when they work with blocks.&quot;" data-np="&quot;ल्हाक्पासँगका कार्यशालाहरू शिक्षकहरूका लागि प्रेरणादायी र सशक्तिकरण गर्ने छन्।&quot;">"Workshops with Lhakpa are inspiring and empowering for teachers. She brings her experience into the room allowing participants the opportunity to deepen their understanding through hands-on experiences, reflection and time to ask questions. Teachers leave with both a practical tool box and a clear way to communicate how learning is happening for children when they work with blocks."</blockquote>
+      <div class="quote-attr" data-en="— Jane Clarke, Preschool Director" data-np="— जेन क्लार्क, प्रिस्कूल निर्देशक">— Jane Clarke, Preschool Director</div>
+    </div>
+  </div>
+  <div class="quote-dots">
+    <button class="quote-dot" onclick="goToQuote(0)"></button>
+    <button class="quote-dot active" onclick="goToQuote(1)"></button>
+  </div>
 </section>
+
 
 <!-- BLOCK SETS -->
 <section class="blocks-section fade-in" id="blocks">
